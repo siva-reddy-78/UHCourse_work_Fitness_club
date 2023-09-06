@@ -103,7 +103,9 @@ public class MainClass {
                 {
                 	System.out.println("Giving rating");
                 	service.userRating();
-                    inner=false;
+                    inner=false; 
+                	service.display();
+                	
                 }
                 else 
                 {

@@ -29,51 +29,7 @@ public class UserService {
 	
 	public void demoUsers()
 	{
-		  UserData user_1=new UserData("siva reddy","saturday","04:02:2023","bodysclupt",22,"siva@gmail.com",id,3,"Attended");
-		  UserData user_2=new UserData("prudhvi","Sunday","05:02:2023","Spin",22,"prudhvi@.com",id+1,5,"Attended");
-		  UserData user_3=new UserData("Akhila","saturday","11:02:2023","Yoga",22,"vamc@gmail.com",id+2,2,"Attended");
-		  UserData user_4=new UserData("teja","Sunday","12:02:2023","Zumba",22,"teja@gmail.com",id+3,3,"Attended");
-		  UserData user_5=new UserData("vamsi","saturday","18:02:2023","Spin",22,"vamc@gmail.com",id+4,2,"Attended");
-		  UserData user_6=new UserData("revi","sunday","19:02:2023","Bodysclupt",22,"vamc@gmail.com",id+5,3,"Attended"); 
-		  UserData user_7=new UserData("kavya","Saturday","25:02:2023","Zumba",22,"vamc@gmail.com",id+6,5,"Attended"); 
-		  UserData user_8=new UserData("sravya","Sunday","26:02:2023","Box fit",22,"vamc@gmail.com",id+7,3,"Attended");
-		  UserData user_9=new UserData("revi","Saturday","04:03:2023","bodysclupt",22,"vamc@gmail.com",id+8,4,"Attended"); 
-		  UserData user_10=new UserData("revi","sunday","05:03:2023","Yoga",22,"vamc@gmail.com",id+9,2,"Attended"); 
-		  UserData user_13=new UserData("pavi","saturday","04:02:2023","bodysclupt",22,"vamc@gmail.com",id+11,3,"Attended");
-		  UserData user_12=new UserData("thaliva","saturday","04:02:2023","bodysclupt",22,"vamc@gmail.com",id+12,5,"Attended");
-		  UserData user_14=new UserData("rajini","saturday","04:02:2023","bodysclupt",22,"vamc@gmail.com",id+13,4,"Attended");
-		  UserData user_15=new UserData("gajini","saturday","04:02:2023","bodysclupt",22,"vamc@gmail.com",id+14,3,"Attended");
-		  UserData user_11=new UserData("balaya","Saturday","04:02:2023","box fit",22,"vamc@gmail.com",id+15,5,"Attended");
-		  UserData user_16=new UserData("balu","Saturday","04:02:2023","box fit",22,"vamc@gmail.com",id+16,3,"Attended");
-		  UserData user_17=new UserData("subbu","Saturday","04:02:2023","box fit",22,"vamc@gmail.com",id+17,2,"Attended");
-		  UserData user_18=new UserData("srikanth","Saturday","04:02:2023","box fit",22,"vamc@gmail.com",id+10,4,"Attended");
-		  UserData user_19=new UserData("ravi kanth","Saturday","04:02:2023","box fit",22,"vamc@gmail.com",id+18,3,"Attended");
-		  UserData user_20=new UserData("singamalay","Sunday","20:03:2023","Bodysclupt",22,"lay@gmail.com",id+19,5,"Booked");
-		  UserData user_21=new UserData("simhadhri","saturday","18:03:2023","spin",22,"lay@gmail.com",id+20,0,"booked");
-		  UserData user_22=new UserData("siva","sunday","02:04:2023","Spin",22,"sivareddy78a@gmail.com",835029,0,"Attended");
-		  
-		  user.add(user_5);
-		  user.add(user_4);
-		  user.add(user_3);
-		  user.add(user_2);
-		  user.add(user_1); 
-		  user.add(user_8);
-		  user.add(user_7);
-		  user.add(user_6);
-		  user.add(user_9);
-		  user.add(user_10);
-		  user.add(user_11);
-		  user.add(user_12);
-		  user.add(user_13);
-		  user.add(user_14);
-		  user.add(user_15);
-		  user.add(user_16);
-		  user.add(user_17);
-		  user.add(user_18);
-		  user.add(user_19);
-		  user.add(user_20);
-		  user.add(user_21);
-		  user.add(user_22);
+		 
 	}
 	public void display()
 	{
@@ -228,6 +184,13 @@ public class UserService {
 			System.out.println("[USER INPUT (email)]");
 			email=sc.next();
 			ref=rand.nextInt(id);
+			  for(UserData user : user)
+			  {
+				  if(user.getRefnumber()==ref)
+				  {
+					  id=(id+7)*3;
+				  }
+			  }
 			status="Booked";
 			UserData newuser=new UserData(name,day,date,lesson,age,email,ref,rating,status);
 			user.add(newuser);
@@ -342,7 +305,7 @@ public class UserService {
 				user.setLesson(lesson);
 				user.setStatus(status);
 				System.out.println(user);
-				found=true;
+				found=true; 
 			}
 		}
 		if(found)
